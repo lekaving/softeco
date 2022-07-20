@@ -1,0 +1,16 @@
+.logo {
+  height: 50px;
+  img {
+    object-fit: contain;
+    width: 50px;
+  }
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+
+  li:not(:first-child) {
+    padding-left: 10px;
+  }
+}

@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
